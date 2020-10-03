@@ -54,11 +54,11 @@ const element = <Fragment>
 ReactDOM.render(element,document.getElementById('root'));
 
 
-function allBooks() {
-  let elements =[]
-  let i 
-  for (i=0; i < books, length, i++) {
-    let book = books[i];
+// function allBooks() {
+//   let elements =[]
+//   let i 
+//   for(i=0; i < books, length, i++) {
+//     let book = books[i];
 
     
     const element = <Fragment>
