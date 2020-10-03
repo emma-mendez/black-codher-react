@@ -1,12 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import logo192 from './logo192.png';
 import './App.css';
 
 function App() {
   return (
     <div className="ACS">
+      <br>
+      </br>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <br>
+      </br>
+      <br>
+      </br>
+        <img src={logo192} className="App-logo" alt="logo" />
+        <br>
+        </br>
+        <br>
+        </br>
         <h1>ACS PRESENTS</h1>
         <a
           className="App-link"
