@@ -6,13 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="ACS">
-      <br>
-      </br>
       <header className="App-header">
-      <br>
-      </br>
-      <br>
-      </br>
         <img src={logo192} className="App-logo" alt="logo" />
         <br>
         </br>
