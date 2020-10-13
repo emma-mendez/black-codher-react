@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import Header from './components/Header'; 
 import BookList from './components/BookList';
-import Search from './components./Search';
+import Search from './components/Search';
 import About from './pages/About';
 import data from './models/books.json';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
     const [books, setBooks] = useState(data);
     const [keyword, setKeyword] = useState('');
@@ -19,7 +19,7 @@ function addBook(title, id) {
 async function findBooks (value) {
 const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${value}&filter=paid-ebooks&print-type=books&projection=lite`
 ).then(res => res.json());
-    setBooks(results.item);
+    setBooks(results.items);
 }
 
     return (
