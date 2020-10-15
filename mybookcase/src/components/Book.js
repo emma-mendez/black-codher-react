@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '/App.css';
 
 const Book = (props) => {
     let {
@@ -8,15 +9,16 @@ const Book = (props) => {
         saleInfo: {listPrice}
     } = props.book; 
 
+    const clickHandler = () => props.addBook(title, id);
 
     return (
             <div>
                 <h2>{title}</h2>
                 <p>{authors ? authors.join(', ') : 'No authors'}</p>
                 <p>{listPrice && listPrice.amount}</p>
-                <p>{description}</p>
+                <p className="description">{description}</p>
                 <img src={smallThumbnail || thumbnail} alt={title} />
-                <button onClick={() => props.addBook(title, id)}>Add +</button>
+                {/* <button onClick={() => props.addBook(title, id)}>Add +</button> */}
         </div> 
     );
 }

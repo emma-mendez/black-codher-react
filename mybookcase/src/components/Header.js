@@ -5,11 +5,11 @@ const Header =() => {
     return (
         <>
             <h1>My Bookcase</h1>
-            <Link to="/">Home</Link>
+            <Link to="/"className="coral-button">Home</Link>
             <br></br>
-            <Link to="/bookcase">Bookcase</Link>
+            <Link to="/bookcase" className="coral-button">Bookcase</Link>
             <br></br>
-            <Link to="/About">About</Link>
+            <Link to="/About" className="coral-button">About</Link>
         </>
     )
 

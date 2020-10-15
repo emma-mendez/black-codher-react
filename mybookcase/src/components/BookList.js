@@ -1,16 +1,19 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import Book from './Book';
+import '/App.css';
 
 
-
-const BookList = (props) => {
-return (
-        <div>
-            {props.books.map(book => (
-                <>
-                    <Book key={book.id} addBook={props.addBook} book={book}/>
-                </>
+const BookList = ({books, addBook, removeBook}) => {
+    return (
+            <div>
+                {books.map(book => (
+                    <Book 
+                    key={book.id}
+                    book={book} 
+                    addBook={addBook}
+                    removeBook={removeBook}
+                />
             ))}
         </div>
     ); 
