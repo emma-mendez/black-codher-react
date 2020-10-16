@@ -9,7 +9,7 @@ function Search (props) {
     }
 
     return (
-    <form className="search-form" onSubmit={handleSubmit}>
+    <form className="search-form" onsubmit={handleSubmit}>
         <input type="text" value={props.keyword} onChange={(event) => props.setKeyword(event.target.value)} />
         <input type="Submit" value="Search" />
     </form>
