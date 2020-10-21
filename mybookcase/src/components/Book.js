@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import '/App.css';
+
 
 const Book = (props) => {
     let {
@@ -14,15 +14,14 @@ const Book = (props) => {
     return (
             <div className="book">
                 <h2>{title}</h2>
+                <img src={smallThumbnail || thumbnail} alt={title} />
                 <p>{authors ? authors.join(', ') : 'No authors'}</p>
                 <h4>{listPrice && listPrice.amount}</h4>
                 <p className="description">{description}</p>
-                <img src={smallThumbnail || thumbnail} alt={title} />
                 {props.addBook && (
-                    <button
+                    <button 
                         onClick={clickHandler}
-                        className="coral-button"
-                    >
+                        className="button-color">
                             Add +
                         </button>
                 )}

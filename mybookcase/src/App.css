@@ -1,0 +1,75 @@
+.h1 {
+  text-align: center;
+
+}
+
+
+.App {
+  text-align: center;
+}
+
+.search-form {
+  display: inline-block;
+
+}
+
+.book {
+  color: ;
+
+}
+
+.description {
+  border: solid;
+  color: rgb(0, 0, 0);
+
+}
+
+.button-nav {
+  background-color: white;
+  color: rgb(142, 143, 139);
+  border: solid;
+  padding: 3 rem 8 rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button-color {
+  background-color: white;
+  color: rgb(2, 2, 2);
+  border: solid;
+  padding: 3 rem 8 rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button-color:hover {
+  background-color: rgb(179, 252, 161);
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
