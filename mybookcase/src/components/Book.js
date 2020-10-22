@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 
 
 const Book = (props) => {
@@ -19,11 +20,18 @@ const Book = (props) => {
                 <h4>{listPrice && listPrice.amount}</h4>
                 <p className="description">{description}</p>
                 {props.addBook && (
-                    <button 
+                    <Button 
                         onClick={clickHandler}
-                        className="button-color">
+                        className="btn-light">
                             Add +
-                        </button>
+                        </Button>
+                )}
+                {props.removeBook && (
+                    <Button 
+                        onClick={() => props.removeBook(title, id)}
+                        className="btn-light">
+                            Remove
+                        </Button>
                 )}
                 {/* <button onClick={() => props.addBook(title, id)}>Add +</button> */}
         </div> 

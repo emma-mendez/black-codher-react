@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect, fragment } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'; 
 import BookList from './components/BookList';
 import Search from './components/Search';
@@ -9,17 +10,34 @@ import data from './models/books.json';
 const App = () => {
     const [books, setBooks] = useState(data);
     const [keyword, setKeyword] = useState('');
+    const [bookcase, setBookcase] = useState([]);
+    // Destructuring - Below has been simplified
+    // const keyWordState = useState('');
+    // const keyword = keyWordState[0];
+    // const setKeyword = keyWordState[1];
+
+// Use this code example for such this as loading animations after page has loaded the above.
+// useEffect(()=> {
+//     //
+// });
 
 function addBook(title, id) {
     const newBookList = books.filter(book => book.id !== id);
+    const chosenBook = books.filter(book => book.id === id);
     setBooks(newBookList);
+    setBookcase([...bookcase, ...chosenBook]);
     console.log(`The Book ${title} was clicked`)
 }
 
-async function findBooks (value) {
-const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${value}&filter=paid-ebooks&print-type=books&projection=lite`
+function removeBook(id) {
+    const newBookcaseList = bookcase.filter(book => book.id !== id);
+    setBookcase(newBookcaseList);
+}
+
+async function findBooks (term) {
+const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&filter=paid-ebooks&print-type=books&projection=lite`
 ).then(res => res.json());
-    setBooks(results.item);
+    setBooks(results.items);
 }
 
     return (
@@ -33,15 +51,15 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${val
                 </>
             )} />
 
-            <Route exact path="/booklist" render={() => (
+            <Route exact path="/Bookcase" render={() => (
                 <>
                     <Header />
-                    <BookList books={books} addBook={addBook} />
+                    <BookList books={bookcase} removeBook={(removeBook)} />
                 </>
             )} />
             
 
-            <Route exact path="/about" render={() => (
+            <Route exact path="/About" render={() => (
                 <>
                     <Header />
                     <About books={books} addBook={addBook} />
