@@ -5,6 +5,7 @@ import Header from './components/Header';
 import BookList from './components/BookList';
 import Search from './components/Search';
 import About from './pages/About';
+import Bookcase from './pages/Bookcase';
 import data from './models/books.json';
 
 const App = () => {
@@ -29,9 +30,11 @@ function addBook(title, id) {
     console.log(`The Book ${title} was clicked`)
 }
 
-function removeBook(id) {
-    const newBookcaseList = bookcase.filter(book => book.id !== id);
-    setBookcase(newBookcaseList);
+function removeBook(title, id) {
+    const removeBookList = books.filter(book => book.id !== id);
+    const removeBook = books.filter(book => book.id === id);
+    setBooks(removeBookList);
+    setBookcase('');
 }
 
 async function findBooks (term) {

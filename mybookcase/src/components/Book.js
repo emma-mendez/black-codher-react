@@ -11,6 +11,7 @@ const Book = (props) => {
     } = props.book; 
 
     const clickHandler = () => props.addBook(title, id);
+    const clickHandlerRemove = () => props.removeBook(title, id);
 
     return (
             <div className="book">
@@ -28,12 +29,11 @@ const Book = (props) => {
                 )}
                 {props.removeBook && (
                     <Button 
-                        onClick={() => props.removeBook(title, id)}
+                        onClick={clickHandlerRemove}
                         className="btn-light">
                             Remove
                         </Button>
                 )}
-                {/* <button onClick={() => props.addBook(title, id)}>Add +</button> */}
         </div> 
     );
 }
