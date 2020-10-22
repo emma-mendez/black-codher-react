@@ -25,6 +25,7 @@ const App = () => {
 function addBook(title, id) {
     const newBookList = books.filter(book => book.id !== id);
     const chosenBook = books.filter(book => book.id === id);
+    const removeBook = books.filter(book => book.id === id);
     setBooks(newBookList);
     setBookcase([...bookcase, ...chosenBook]);
     console.log(`The Book ${title} was clicked`)
@@ -34,7 +35,7 @@ function removeBook(title, id) {
     const removeBookList = books.filter(book => book.id !== id);
     const removeBook = books.filter(book => book.id === id);
     setBooks(removeBookList);
-    setBookcase('');
+    setBookcase(removeBook);
 }
 
 async function findBooks (term) {
