@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header =({ props }) => {
     return (
         <>
-            <h1>The Modern Bookstore</h1>
+            <h1 className="h1">The Modern Bookstore</h1>
 
             <Link to="/About" className="button-color">Guidance</Link>
 
