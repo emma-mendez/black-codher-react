@@ -12,6 +12,8 @@ const Header =({ props }) => {
             <Link to="/"className="button-color">Book Lists</Link>
             
             <Link to="/Bookcase" className="button-color">Bookcase</Link>
+
+            <Link to="/Dynamic" className="button-color">Dynamic</Link>
         </>
         
     )

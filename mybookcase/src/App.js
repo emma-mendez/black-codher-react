@@ -6,6 +6,7 @@ import BookList from './components/BookList';
 import Search from './components/Search';
 import About from './pages/About';
 import Bookcase from './pages/Bookcase';
+import Dynamic from './pages/Dynamic';
 import data from './models/books.json';
 
 const App = () => {
@@ -25,7 +26,7 @@ const App = () => {
 function addBook(title, id) {
     const newBookList = books.filter(book => book.id !== id);
     const chosenBook = books.filter(book => book.id === id);
-    const removeBook = books.filter(book => book.id === id);
+    const addBook = books.filter(book => book.id === id);
     setBooks(newBookList);
     setBookcase([...bookcase, ...chosenBook]);
     console.log(`The Book ${title} was clicked`)
@@ -69,9 +70,17 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
                     <About books={books} addBook={addBook} />
                 </> 
             )} />
+
+<Route exact path="/Dynamic" render={() => (
+                <>
+                    <Header />
+                    <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
+                    <BookList books={bookcase} removeBook={(removeBook)} />
+                </>
+            )} />
         </>        
-        </Router>
-    ); }
+    </Router>
+); }
 
 
 

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import BookList from './components/BookList';
 import Search from './components/Search';
 import About from './pages/About';
+import Dynamic from './pages/Dynamic';
 import data from './models/books.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '/App.css';
@@ -46,7 +47,6 @@ return (
             <>
                 <Header />
                 <BookList books={books} addBook={addBook} />
-                
             </>
         )} />
         
