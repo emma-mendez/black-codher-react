@@ -19,7 +19,7 @@ const Book = (props) => {
                 <img src={smallThumbnail || thumbnail} alt={title} />
                 <p>{authors ? authors.join(', ') : 'No authors'}</p>
                 <h4>{listPrice && listPrice.amount}</h4>
-                <p className="description">{description}</p>
+                <p className="description-text">{description}</p>
                 {props.addBook && (
                     <Button 
                         onClick={clickHandler}

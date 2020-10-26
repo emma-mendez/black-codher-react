@@ -1,5 +1,5 @@
 div {
-  width: 1000px;
+  width: 500px;
   margin-left: 25px;
 }
 
@@ -8,6 +8,9 @@ div {
 
 }
 
+.p {
+  color: black
+}
 
 .App {
   text-align: center;
@@ -17,10 +20,22 @@ div {
   display: inline-block;
 }
 
-.description {
-  border: solid;
-  color: rgb(0, 0, 0);
+.description-text {
+  color: black;
+  max-height: 20rem;
+  max-width: 50rem;
+  overflow: auto;
+  margin: 1rem;
 
+}
+
+.book {
+  border: thin solid;
+  color: rgb(214, 183, 79);
+  font-size: 1rem;
+  border-width: 1rem;
+  margin-right: 10rem;
+  
 }
 
 .button-nav {
@@ -46,7 +61,7 @@ div {
 }
 
 .button-color:hover {
-  background-color: rgba(252, 238, 161, 0.445);
+  background-color: rgb(248, 229, 164);
 }
 
 .App-header {
