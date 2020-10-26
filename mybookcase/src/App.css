@@ -15,9 +15,7 @@ div {
 
 .search-form {
   display: inline-block;
-
 }
-
 
 .description {
   border: solid;
@@ -29,7 +27,7 @@ div {
   background-color: white;
   color: rgb(142, 143, 139);
   border: solid;
-  padding: 3 rem 8 rem;
+  padding: 9 rem 20 rem;
   font-size: 1.2rem;
   margin-right: 1rem;
   display: center;
@@ -40,7 +38,7 @@ div {
   background-color: white;
   color: rgb(2, 2, 2);
   border: solid;
-  padding: 3 rem 8 rem;
+  padding: 9 rem 20 rem;
   font-size: 1.2rem;
   margin-right: 1rem;
   display: center;

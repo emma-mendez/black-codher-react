@@ -71,11 +71,13 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
                 </> 
             )} />
 
-<Route exact path="/Dynamic" render={() => (
+            <Route exact path="/Dynamic" render={() => (
                 <>
                     <Header />
                     <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
-                    <BookList books={bookcase} removeBook={(removeBook)} />
+                    <Dynamic />
+                    <p>Previous page</p>
+                    <p>Next Page</p>
                 </>
             )} />
         </>        

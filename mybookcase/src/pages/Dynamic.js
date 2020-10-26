@@ -1,5 +1,21 @@
-// import React from 'react';
-// import {Link} from 'react-router-dom';
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+const Dynamic = (props) => {
+    return (
+        <>
+        <div className="Header">
+            <h1>Hello</h1>
+        </div>
+        <div className="Dynamic">
+            <p>Scroll Around</p>
+        </div>
+        </>
+    );
+}
+
+
+
 
 // console.clear();
 
@@ -158,4 +174,4 @@
 // const elApp = document.getElementById("app");
 // ReactDOM.render(<App />, elApp);
 
-// export default Dynamic
+export default Dynamic
