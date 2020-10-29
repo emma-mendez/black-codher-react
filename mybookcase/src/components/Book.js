@@ -15,10 +15,10 @@ const Book = (props) => {
 
     return (
             <div className="book">
-                <h2>{title}</h2>
-                <img src={smallThumbnail || thumbnail} alt={title} />
-                <p>{authors ? authors.join(', ') : 'No authors'}</p>
-                <h4>{listPrice && listPrice.amount}</h4>
+                <h2 className="description-text">{title}</h2>
+                <img className="image" src={smallThumbnail || thumbnail} alt={title} />
+                <p className="description-text">{authors ? authors.join(', ') : 'No authors'}</p>
+                <h4 className="description-text">£{listPrice && listPrice.amount}</h4>
                 <p className="description-text">{description}</p>
                 {props.addBook && (
                     <Button 

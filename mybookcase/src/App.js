@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import React, { useState, useEffect, fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'; 
@@ -45,6 +45,11 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
     setBooks(results.items);
 }
 
+function returnHome(Link) {}
+
+
+
+
     return (
         <Router>
         <>    
@@ -76,8 +81,8 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
                     <Header />
                     <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
                     <Dynamic />
-                    <p>Previous page</p>
-                    <p>Next Page</p>
+                    <p>Guidance</p>
+                    <p>Choose More Books</p>
                 </>
             )} />
         </>        

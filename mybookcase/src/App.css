@@ -5,6 +5,8 @@ div {
 
 .h1 {
   text-align: center;
+  font-size: 6rem;
+
 
 }
 
@@ -27,6 +29,10 @@ div {
   overflow: auto;
   margin: 1rem;
 
+}
+
+.image {
+  margin: 1rem;
 }
 
 .book {
@@ -78,6 +84,8 @@ div {
 .App-link {
   color: #61dafb;
 }
+
+
 /* 
 @keyframes App-logo-spin {
   from {
