@@ -52,7 +52,7 @@ function returnHome(Link) {}
 
     return (
         <Router>
-        <>    
+        <div className="frame">    
             <Route exact path="/" render={() => (
                 <>
                     <Header />
@@ -81,11 +81,9 @@ function returnHome(Link) {}
                     <Header />
                     <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
                     <Dynamic />
-                    <p>Guidance</p>
-                    <p>Choose More Books</p>
                 </>
             )} />
-        </>        
+        </div>        
     </Router>
 ); }
 
