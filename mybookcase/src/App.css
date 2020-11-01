@@ -69,6 +69,20 @@
 
 .button-inner {
     margin-left: 1rem;
+    background-color: white;
+    color: rgb(214, 183, 79);
+    border: solid;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem ;
+    display: center;
+    cursor: pointer;
+}
+
+.button-inner:hover {
+    background-color: rgba(238, 235, 235, 0.474);
+    color: rgb(214, 183, 79);
+    border: solid;
 }
 
 .App-header {
