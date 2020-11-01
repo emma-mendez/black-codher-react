@@ -23,14 +23,14 @@ const Book = (props) => {
                 {props.addBook && (
                     <Button 
                         onClick={clickHandler}
-                        className="btn-light">
+                        className="button-inner">
                             Add +
                         </Button>
                 )}
                 {props.removeBook && (
                     <Button 
                         onClick={clickHandlerRemove}
-                        className="btn-light">
+                        className="button-inner">
                             Remove
                         </Button>
                 )}
