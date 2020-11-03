@@ -38,6 +38,8 @@
     font-size: 1rem;
     border-width: 1rem;
     margin-right: 10rem;
+    margin-top: 1rem ;
+
     
     }
 
@@ -56,7 +58,6 @@
     background-color: white;
     color: rgb(2, 2, 2);
     border: solid;
-    padding: 9 rem 20 rem;
     font-size: 1.2rem;
     margin-right: 1rem;
     display: center;
@@ -83,6 +84,25 @@
     background-color: rgba(238, 235, 235, 0.474);
     color: rgb(214, 183, 79);
     border: solid;
+}
+
+.dynamic-button {
+    margin-left: 1rem;
+    background-color: white;
+    color: rgb(214, 183, 79);
+    border: solid;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem ;
+    display: center;
+    cursor: pointer;
+}
+
+.dynamic-button:hover {
+    background-color: rgba(238, 235, 235, 0.474);
+    color: rgb(214, 183, 79);
+    border: solid;
+
 }
 
 .App-header {

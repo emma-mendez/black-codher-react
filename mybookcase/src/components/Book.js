@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
 
@@ -10,11 +9,12 @@ const Book = (props) => {
         saleInfo: {listPrice}
     } = props.book; 
 
-    const clickHandler = () => props.addBook(title, id);
-    const clickHandlerRemove = () => props.removeBook(title, id);
-
+const clickHandler = () => props.addBook(title, id);
+const clickHandlerRemove = () => props.removeBook(title, id);
+const clickHandlerDynamic = () => props.addBook(title, id);
     return (
             <div className="book">
+                <>
                 <h2 className="description-text">{title}</h2>
                 <img className="image" src={smallThumbnail || thumbnail} alt={title} />
                 <p className="description-text">{authors ? authors.join(', ') : 'No authors'}</p>
@@ -25,32 +25,24 @@ const Book = (props) => {
                         onClick={clickHandler}
                         className="button-inner">
                             Add +
-                        </Button>
+                    </Button>
                 )}
                 {props.removeBook && (
-                    <Button 
+                    <Button
                         onClick={clickHandlerRemove}
                         className="button-inner">
                             Remove
-                        </Button>
-                )}
+                    </Button>    
+                )}    
+                    <Button
+                        onClick={clickHandlerDynamic}
+                        className="button-inner">
+                            Dynamic
+                    </Button>
+            </>
         </div> 
     );
 }
-
-// Book.propTypes = {
-//     book: PropTypes.shape({
-//         id: PropTypes.string,
-//         volumeInfo: PropTypes.shape({
-//             title: PropTypes.string.isRequired,
-//         }),
-//         saleInfo: PropTypes.shape({
-//             listPrice: PropTypes.shape({
-//                 amount:PropTypes.number
-//             })
-//         })
-//     })
-// };
 
 
 export default Book;

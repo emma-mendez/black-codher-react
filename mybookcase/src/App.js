@@ -13,6 +13,8 @@ const App = () => {
     const [books, setBooks] = useState(data);
     const [keyword, setKeyword] = useState('');
     const [bookcase, setBookcase] = useState([]);
+
+
     // Destructuring - Below has been simplified
     // const keyWordState = useState('');
     // const keyword = keyWordState[0];
@@ -26,7 +28,7 @@ const App = () => {
 function addBook(title, id) {
     const newBookList = books.filter(book => book.id !== id);
     const chosenBook = books.filter(book => book.id === id);
-    const addBook = books.filter(book => book.id === id);
+    // const addBook = books.filter(book => book.id === id);
     setBooks(newBookList);
     setBookcase([...bookcase, ...chosenBook]);
     console.log(`The Book ${title} was clicked`)
@@ -39,15 +41,19 @@ function removeBook(title, id) {
     setBookcase(removeBook);
 }
 
+function dynamicBook(title, id) {
+    const dynamicList = books.filter(book => book.id !== id);
+    const dynamicBook = books.filter(book => book.id === id);
+    // const dynamicBook = books.filter(book => book.id === id);
+    setBooks(dynamicList);
+    setBookcase([dynamicBook]);
+}
+
 async function findBooks (term) {
 const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&filter=paid-ebooks&print-type=books&projection=lite`
 ).then(res => res.json());
     setBooks(results.items);
 }
-
-function returnHome(Link) {}
-
-
 
 
     return (
@@ -65,6 +71,9 @@ function returnHome(Link) {}
                 <>
                     <Header />
                     <BookList books={bookcase} removeBook={(removeBook)} />
+                    <BookList books={bookcase} dynamicBook={(dynamicBook)} />
+                    {/* <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>
+                    <Link to="/BookList"><button className="dynamic-button">Add More Books</button></Link> */}
                 </>
             )} />
             
@@ -81,6 +90,9 @@ function returnHome(Link) {}
                     <Header />
                     <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
                     <Dynamic />
+                    <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>
+                    <Link to="/BookList"><button className="dynamic-button">Add More Books</button></Link>
+        
                 </>
             )} />
         </div>        
