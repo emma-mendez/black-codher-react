@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 
 const Book = (props) => {
@@ -35,11 +37,13 @@ const clickHandlerDynamic = () => props.dynamicBook(title, id);
                     </Button>    
                 )}    
                 {props.dynamicBook && (
+                    <Link to="/Dynamic">
                     <Button
                     onClick={clickHandlerDynamic}
                     className="button-inner">
                         Buy Book
                 </Button>   
+                </Link>
                 )}    
             </>
         </div> 

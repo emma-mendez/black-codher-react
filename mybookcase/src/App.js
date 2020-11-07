@@ -45,8 +45,11 @@ function dynamicBook(title, id) {
     const dynamicList = books.filter(book => book.id !== id);
     const dynamicBook = books.filter(book => book.id === id);
     // const dynamicBook = books.filter(book => book.id === id);
+    console.log(dynamicBook);
+    console.log([dynamicBook]);
     setBooks(dynamicList);
     setBookcase([dynamicBook]);
+
 }
 
 async function findBooks (term) {
