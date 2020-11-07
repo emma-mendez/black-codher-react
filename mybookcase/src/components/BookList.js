@@ -3,7 +3,7 @@ import React from 'react';
 import Book from './Book';
 
 
-const BookList = ({books, addBook, removeBook}) => {
+const BookList = ({books, addBook, removeBook, dynamicBook}) => {
     return (
         <div>
             {books.map(book => (
@@ -12,6 +12,7 @@ const BookList = ({books, addBook, removeBook}) => {
                 book={book} 
                 addBook={addBook}
                 removeBook={removeBook}
+                dynamicBook={dynamicBook}
                 />
             ))}
         </div>

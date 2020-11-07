@@ -5,13 +5,13 @@ import { Button } from 'react-bootstrap';
 const Book = (props) => {
     let {
         id,
-        volumeInfo: {title, authors, description, imageLinks: {thumbnail, smallThumbnail}},
-        saleInfo: {listPrice}
+        volumeInfo: {title, authors, description, imageLinks: {thumbnail, smallThumbnail}} = { imageLinks: {} },
+        saleInfo: {listPrice} = {}
     } = props.book; 
 
 const clickHandler = () => props.addBook(title, id);
 const clickHandlerRemove = () => props.removeBook(title, id);
-const clickHandlerDynamic = () => props.addBook(title, id);
+const clickHandlerDynamic = () => props.dynamicBook(title, id);
     return (
             <div className="book">
                 <>

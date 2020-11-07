@@ -70,8 +70,7 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
             <Route exact path="/Bookcase" render={() => (
                 <>
                     <Header />
-                    <BookList books={bookcase} removeBook={(removeBook)} />
-                    <BookList books={bookcase} dynamicBook={(dynamicBook)} />
+                    <BookList books={bookcase} removeBook={(removeBook)} dynamicBook={(dynamicBook)} />
                     {/* <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>
                     <Link to="/BookList"><button className="dynamic-button">Add More Books</button></Link> */}
                 </>
