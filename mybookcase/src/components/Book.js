@@ -34,11 +34,13 @@ const clickHandlerDynamic = () => props.dynamicBook(title, id);
                             Remove
                     </Button>    
                 )}    
+                {props.dynamicBook && (
                     <Button
-                        onClick={clickHandlerDynamic}
-                        className="button-inner">
-                            Dynamic
-                    </Button>
+                    onClick={clickHandlerDynamic}
+                    className="button-inner">
+                        Buy Book
+                </Button>   
+                )}    
             </>
         </div> 
     );
