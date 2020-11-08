@@ -28,7 +28,6 @@ const App = () => {
 function addBook(title, id) {
     const newBookList = books.filter(book => book.id !== id);
     const chosenBook = books.filter(book => book.id === id);
-    // const addBook = books.filter(book => book.id === id);
     setBooks(newBookList);
     setBookcase([...bookcase, ...chosenBook]);
     console.log(`The Book ${title} was clicked`)
@@ -44,11 +43,10 @@ function removeBook(title, id) {
 function dynamicBook(title, id) {
     const dynamicList = books.filter(book => book.id !== id);
     const dynamicBook = books.filter(book => book.id === id);
-    // const dynamicBook = books.filter(book => book.id === id);
     console.log(dynamicBook);
     console.log([dynamicBook]);
     setBooks(dynamicList);
-    setBookcase([dynamicBook]);
+    setBookcase([...bookcase,...dynamicBook]);
 
 }
 
@@ -93,7 +91,7 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
                     <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
                     <Dynamic />
                     <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>
-                    <Link to="/BookList"><button className="dynamic-button">Add More Books</button></Link>
+                    <Link to="/"><button className="dynamic-button">Add More Books</button></Link>
         
                 </>
             )} />
