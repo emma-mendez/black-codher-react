@@ -13,7 +13,7 @@ const App = () => {
     const [books, setBooks] = useState(data);
     const [keyword, setKeyword] = useState('');
     const [bookcase, setBookcase] = useState([]);
-
+    const [buyBook, setBuyBook] = useState([]);
 
     // Destructuring - Below has been simplified
     // const keyWordState = useState('');
@@ -41,13 +41,12 @@ function removeBook(title, id) {
 }
 
 function dynamicBook(title, id) {
-    const dynamicList = books.filter(book => book.id !== id);
-    const dynamicBook = books.filter(book => book.id === id);
+    const dynamicList = bookcase.filter(book => book.id !== id);
+    const dynamicBook = bookcase.filter(book => book.id === id);
     console.log(dynamicBook);
     console.log([dynamicBook]);
-    setBooks(dynamicList);
-    setBookcase([...bookcase,...dynamicBook]);
-
+    setBuyBook ([...buyBook,...dynamicBook]);
+    setBookcase (dynamicList);
 }
 
 async function findBooks (term) {
@@ -92,7 +91,7 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
                     <Dynamic />
                     <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>
                     <Link to="/"><button className="dynamic-button">Add More Books</button></Link>
-        
+                    <BookList books = {buyBook} removeBook = {removeBook} />
                 </>
             )} />
         </div>        
