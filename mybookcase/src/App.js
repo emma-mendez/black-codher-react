@@ -84,7 +84,6 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
             <Route exact path="/Dynamic" render={() => (
                 <>
                     <Header />
-                    <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
                     <Dynamic />
                     <BookList books={buyBook}/>
                     <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>

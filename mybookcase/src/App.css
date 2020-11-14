@@ -10,13 +10,29 @@
     margin-bottom: 4rem ;
 }
 
+.h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-top: 3rem ;
+    margin-bottom: 3rem ;
+    margin-left: 0rem;
+
+}
+
 .h1margin { margin-top: 3rem ;
     margin-bottom: 2rem ;
 }
 
-.p {
+.p2 {
+    margin-top: 4rem ;
+    margin-bottom: 3rem ;
     color: black;
+    text-align: center;
     }
+
+    .p {
+        color: black;
+        }
 
 .App {
     text-align: center;
@@ -91,7 +107,7 @@
 }
 
 .dynamic-button {
-    margin-left: 1rem;
+    margin-left: 0rem;
     background-color: white;
     color: rgb(214, 183, 79);
     border: solid;
