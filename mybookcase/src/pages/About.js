@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
-
+import React from 'react';
 
 const About = () => {
     return(
         <>
-        <h1>Welcome to the Bookcase App </h1>
-
+        <h1 className="h1margin">Welcome to My Bookcase App </h1>
         <p>
         The following application was created by Emma Mendez. 
         </p>
         <p>This bookcase app displays a list of books that 
-        a user can save to a local bookcase.
+        you can save to your bookcase and purchase later.
         </p>
 
-        <p>Click on the "Add + " button to add a book to your bookcase.</p>
-        <p>
+        <p>Click on the "Add + " button to add a book to your bookcase. Then click 'Buy Book to add to your cart.</p>
+        <h5>
         *Use the search bar to 
         find the latest books by name, author or description.
-        </p>
+        </h5>
         </>
     );
 }

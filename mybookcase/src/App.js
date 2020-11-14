@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import React, { useState, useEffect, fragment } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'; 
 import BookList from './components/BookList';
 import Search from './components/Search';
 import About from './pages/About';
-import Bookcase from './pages/Bookcase';
 import Dynamic from './pages/Dynamic';
 import data from './models/books.json';
 
@@ -45,7 +44,7 @@ function dynamicBook(title, id) {
     const dynamicBook = bookcase.filter(book => book.id === id);
     console.log(dynamicBook);
     console.log([dynamicBook]);
-    setBuyBook ([...buyBook,...dynamicBook]);
+    setBuyBook ([...buyBook, ...dynamicBook]);
     setBookcase (dynamicList);
 }
 
@@ -71,8 +70,6 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
                 <>
                     <Header />
                     <BookList books={bookcase} removeBook={(removeBook)} dynamicBook={(dynamicBook)} />
-                    {/* <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>
-                    <Link to="/BookList"><button className="dynamic-button">Add More Books</button></Link> */}
                 </>
             )} />
             
@@ -89,9 +86,9 @@ const results = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${ter
                     <Header />
                     <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword} />
                     <Dynamic />
+                    <BookList books={buyBook}/>
                     <Link to="/About"><button className="dynamic-button">Back to Guidance</button></Link>
                     <Link to="/"><button className="dynamic-button">Add More Books</button></Link>
-                    <BookList books = {buyBook} removeBook = {removeBook} />
                 </>
             )} />
         </div>        
